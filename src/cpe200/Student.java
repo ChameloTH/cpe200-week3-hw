@@ -127,27 +127,22 @@ public class Student {
         }
         yearOfBirth = year;
     }
-
-    public boolean getStatus()
-    {
-        return status;
-    }
     public boolean isActive()
     {
-        return (status = true);
+        return status;
     }
 
     @Override
     public String toString()
     {
-        String o = studentName + " (" + studentID + ") was born in " + yearOfBirth + " and is ";
+        String o = studentName + " (" + studentID + ") was born in " + yearOfBirth + " is an ";
         if(isActive())
         {
-            o = o + "active";
+            o = o + "ACTIVE";
         }
         else
         {
-            o = o + "inactive";
+            o = o + "INACTIVE";
         }
         o = o + " student.";
         return o;

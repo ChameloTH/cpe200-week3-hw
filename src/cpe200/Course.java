@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class Course {
 
-    private static final String courseIDregX = "";
+    private static final String courseIDregX = "^[0-9]{6}$";
 
     private String courseName;
     private String courseID;
@@ -55,7 +55,7 @@ public class Course {
 
     public void setCourse_name(String course_name)
     {
-        if(courseName.equalsIgnoreCase(""))
+        if(course_name.equalsIgnoreCase(""))
         {
             return;
         }
@@ -72,7 +72,7 @@ public class Course {
         {
             return;
         }
-        if(isValidCourse_id(course_id))
+        if(!isValidCourse_id(course_id))
         {
             return;
         }
@@ -135,15 +135,15 @@ public class Course {
         // implement the rest here
         if(noStudents < 1)
         {
-            o = o + "No student. (Max: " +maxStudents + ")";
+            o = o + "NO student, [maximum: " +maxStudents + "]";
         }
         else if(noStudents == 1)
         {
-            o = o + "1 student. (Max: " +maxStudents + ")";
+            o = o + "ONE student, [maximum: " +maxStudents + "]";
         }
         else
         {
-            o = o + noStudents + " students. (Max: " +maxStudents + ")";
+            o = o + noStudents + " students, [maximum: " +maxStudents + "]";
         }
         return o;
     }
